@@ -11,7 +11,6 @@ function App() {
 
   return (
     <CounterContext.Provider value={{ counter, increment }}>
-      <RenderContext />
       <QualitySelector />
     </CounterContext.Provider>
   );

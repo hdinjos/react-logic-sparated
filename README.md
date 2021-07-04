@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Hanya untuk belajar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Membangun web dengan reactjs
 
-## Available Scripts
+## Isi Repo
 
-In the project directory, you can run:
+1. Implementasi sparated *logic* and *view*, yaitu memisahkan antara *logic* dengan *view*/*UI* pada satu component, sehingga sifatnya *reusable*/dapat digunakan kembali
+2. Penggunaan library styled-component untuk mengganti css tradisional. disini dapat kita pelajari tentang css in js, tujuannya agar ketika komponen sudah banyak dan styling juga suda banyak maka tidak akan pusing kalau ada suatu perubahan pada struktur kode styling
+3. Contoh dari penggunaan context yaitu API bawaan dari react untuk *passing*/melawatan data antara percabangan komponen atau *component tree*, bisa digunakan untuk global state (state terpusat) sehingga pertukaran data antar komponen menjadi lebih mudah
 
-### `npm start`
+### Cara Mejalankan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Instalasi semua paket
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Jika belum menginstall paket, atau kali pertama clone projek,
 
-### `npm test`
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Jalankan App
 
-### `npm run build`
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Melihat perubahan 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Jadi semua terpusat pada **App.js**, 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+import QualitySelector from "./pages/QualitySelector"; //spareated logic and view
+import StyledComponent from "./pages/StyledComponent";
+import RenderContext from "./pages/RenderContext";
+```
 
-### `npm run eject`
+pada kode di atas merupakan component yang dibuat berdasarkan isi repo, gunakan salah satu untuk melihat perubahan, dan terapkan pada kode di bawah ini
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```javascript
+return (
+  <CounterContext.Provider value={{ counter, increment }}>
+    <QualitySelector />
+  </CounterContext.Provider>
+);
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`<QualitySelector />` pada diganti dengan **StyledComponent** atau **RenderContext**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Terimakasih sudah lihat, dan baca, apalagi dijalankan
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+kalau ada kekurangan dalam penulisan kode dan logic, bolehlah berbagi, saya perlu bantuan kalian, wajar masih belajar juga :)
