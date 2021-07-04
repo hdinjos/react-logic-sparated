@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { useCounterContext } from "../../App";
 const RenderContext = () => {
   const { counter, increment } = useCounterContext();
   return (
-    <div>
-      {counter}
+    <div style={{ border: "1px solid blue" }}>
+      <p>Context section</p>
+      <h1>{counter}</h1>
       <button onClick={() => increment()}>increment</button>
     </div>
   );
