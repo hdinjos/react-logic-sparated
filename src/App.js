@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/MainWithClass";
 import ThemeContext from "./context/ThemeContext";
 
 function App() {
@@ -7,10 +9,15 @@ function App() {
     setTheme(theme === "red" ? "blue" : "red");
   };
 
+  const themeHook = useState("light");
+
   return (
     <div>
-      <ThemeContext.Provider value={theme}>
-        <div></div>
+      <ThemeContext.Provider value={themeHook}>
+        <div>
+          <Header />
+          <Main />
+        </div>
       </ThemeContext.Provider>
     </div>
   );
