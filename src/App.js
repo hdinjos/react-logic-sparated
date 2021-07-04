@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ThemeContext from "./context/ThemeContext";
+
 function App() {
   const [theme, setTheme] = useState("red");
   const onClickHandler = () => {
@@ -7,9 +9,9 @@ function App() {
 
   return (
     <div>
-      <Text theme={theme} />
-      <h1>{theme}</h1>
-      <button onClick={() => onClickHandler()}>Change Theme</button>
+      <ThemeContext.Provider value={theme}>
+        <div></div>
+      </ThemeContext.Provider>
     </div>
   );
 }
